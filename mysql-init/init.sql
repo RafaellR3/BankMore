@@ -31,3 +31,13 @@ CREATE TABLE IF NOT EXISTS idempotencia (
 	requisicao VARCHAR(1000), -- dados de requisicao
 	resultado VARCHAR(1000) -- dados de retorno
 );
+
+CREATE TABLE IF NOT EXISTS transferencia (
+	Id char(36) PRIMARY KEY, -- identificacao unica da transferencia
+	IdContaCorrenteOrigem char(36) NOT NULL, -- identificacao unica da conta corrente de origem
+	IdContaCorrenteDestino char(36) NOT NULL, -- identificacao unica da conta corrente de destino
+	DataMovimentcao Date(25) NOT NULL, -- data do transferencia no formato DD/MM/YYYY
+	Valor decimal NOT NULL, -- valor da transferencia. Usar duas casas decimais.
+	FOREIGN KEY(IdContaCorrenteOrigem) REFERENCES ContaCorrente(Id)
+	FOREIGN KEY(IdContaCorrenteDestino) REFERENCES ContaCorrente(Id)
+);

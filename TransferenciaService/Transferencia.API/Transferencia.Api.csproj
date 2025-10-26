@@ -17,4 +17,11 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\ContaService\Conta.Infrastructure\Conta.Infrastructure.csproj" />
+    <ProjectReference Include="..\Transferencia.Application\Transferencia.Application.csproj" />
+    <ProjectReference Include="..\Transferencia.Domain\Transferencia.Domain.csproj" />
+    <ProjectReference Include="..\Transferencia.Infrastructure\Transferencia.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
