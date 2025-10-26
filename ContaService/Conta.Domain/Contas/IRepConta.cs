@@ -10,5 +10,6 @@ namespace Conta.Domain.Contas
         Task AdicionarAsync(ContaCorrente conta);
         Task<ContaCorrente?> ObterPorNumeroAsync(int numero);
         Task AtualizarAsync(ContaCorrente conta);
+        Task<decimal> CalcularSaldoAsync(Guid IdContaCorrente);
     }
 }

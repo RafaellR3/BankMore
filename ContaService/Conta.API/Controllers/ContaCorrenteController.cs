@@ -39,7 +39,7 @@ namespace Conta.Api.Controllers
         }
 
         [Authorize]
-        [HttpPut]
+        [HttpPut("Inativar")]
         public async Task<IActionResult> Inativar([FromBody] InativarDto dto)
         {
             var conta = await _repConta.ObterPorNumeroAsync(dto.Numero);
@@ -65,6 +65,26 @@ namespace Conta.Api.Controllers
 
             return NoContent();
         }
+
+        [Authorize]
+        [HttpGet("{numeroConta}/saldo")]
+        public async Task<IActionResult> ConsultarSaldo([FromRoute] int numeroConta)
+
+        {
+            var resultado = await _aplic.ConsultarSaldoAsync(numeroConta);
+
+            if (!resultado.Sucesso)
+            {
+                if (resultado.TipoErro == "INVALID_ACCOUNT" || resultado.TipoErro == "INACTIVE_ACCOUNT")
+                    return BadRequest(new { erro = resultado.TipoErro, mensagem = resultado.Mensagem });
+
+                if (resultado.TipoErro == "TOKEN_INVALID")
+                    return Forbid(); 
+            }
+
+            return Ok(resultado.Dados);
+        }
+
     }
 }
 

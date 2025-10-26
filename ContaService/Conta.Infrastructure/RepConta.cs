@@ -61,5 +61,18 @@ namespace Conta.Infrastructure
             var sql = "UPDATE ContaCorrente SET Ativo = @Ativo WHERE Id = @Id";
             await connection.ExecuteAsync(sql, conta);
         }
+
+        public async Task<decimal> CalcularSaldoAsync(Guid IdContaCorrente)
+        {
+            using var connection = _context.CreateConnection();
+            var sql = @"
+            SELECT 
+                COALESCE(SUM(CASE WHEN TipoMovimento = 0 THEN Valor ELSE 0 END), 0) -
+                COALESCE(SUM(CASE WHEN TipoMovimento = 1 THEN Valor ELSE 0 END), 0)
+            FROM movimento
+            WHERE IdContaCorrente = @IdContaCorrente";
+            return await connection.ExecuteScalarAsync<decimal>(sql, new { IdContaCorrente = IdContaCorrente });
+        }
+
     }
 }
