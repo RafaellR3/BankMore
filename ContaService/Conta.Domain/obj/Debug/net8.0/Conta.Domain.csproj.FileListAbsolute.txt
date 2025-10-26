@@ -1,0 +1,12 @@
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\bin\Debug\net8.0\Conta.Domain.deps.json
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\bin\Debug\net8.0\Conta.Domain.dll
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\bin\Debug\net8.0\Conta.Domain.pdb
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\obj\Debug\net8.0\Conta.Domain.csproj.AssemblyReference.cache
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\obj\Debug\net8.0\Conta.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\obj\Debug\net8.0\Conta.Domain.AssemblyInfoInputs.cache
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\obj\Debug\net8.0\Conta.Domain.AssemblyInfo.cs
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\obj\Debug\net8.0\Conta.Domain.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\obj\Debug\net8.0\Conta.Domain.dll
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\obj\Debug\net8.0\refint\Conta.Domain.dll
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\obj\Debug\net8.0\Conta.Domain.pdb
+C:\Desenvolvimento\BankMore\ContaService\Conta.Domain\obj\Debug\net8.0\ref\Conta.Domain.dll

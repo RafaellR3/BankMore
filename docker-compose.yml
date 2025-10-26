@@ -1,0 +1,67 @@
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bankmoredb
+      MYSQL_USER: bankmoreuser
+      MYSQL_PASSWORD: bankmorepass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - bankmore-net
+
+  usuario-service:
+    build:
+      context: ./UsuarioService
+      dockerfile: Usuario.Api/Dockerfile
+    container_name: usuario-service
+    depends_on:
+      - mysql
+    environment:
+      - ConnectionStrings__DefaultConnection=server=mysql;port=3306;database=bankmoredb;user=bankmoreuser;password=bankmorepass
+    ports:
+      - "5001:8080"
+    networks:
+      - bankmore-net
+
+  conta-service:
+    build:
+      context: ./ContaService
+      dockerfile: Conta.Api/Dockerfile
+    container_name: conta-service
+    depends_on:
+      - mysql
+    environment:
+      - ConnectionStrings__DefaultConnection=server=mysql;port=3306;database=bankmoredb;user=bankmoreuser;password=bankmorepass
+    ports:
+      - "5002:8080"
+    networks:
+      - bankmore-net
+
+  transferencia-service:
+    build:
+      context: ./TransferenciaService
+      dockerfile: Transferencia.Api/Dockerfile
+    container_name: transferencia-service
+    depends_on:
+      - mysql
+    environment:
+      - ConnectionStrings__DefaultConnection=server=mysql;port=3306;database=bankmoredb;user=bankmoreuser;password=bankmorepassvvvvv
+    ports:
+      - "5003:8080"
+    networks:
+      - bankmore-net
+
+volumes:
+  mysql_data:
+
+networks:
+  bankmore-net:
+    driver: bridge

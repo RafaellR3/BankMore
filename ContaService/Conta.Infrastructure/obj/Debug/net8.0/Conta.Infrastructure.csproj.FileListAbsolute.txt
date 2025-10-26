@@ -1,0 +1,15 @@
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\bin\Debug\net8.0\Conta.Infrastructure.deps.json
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\bin\Debug\net8.0\Conta.Infrastructure.dll
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\bin\Debug\net8.0\Conta.Infrastructure.pdb
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\bin\Debug\net8.0\Conta.Domain.dll
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\bin\Debug\net8.0\Conta.Domain.pdb
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\obj\Debug\net8.0\Conta.Infrastructure.csproj.AssemblyReference.cache
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\obj\Debug\net8.0\Conta.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\obj\Debug\net8.0\Conta.Infrastructure.AssemblyInfoInputs.cache
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\obj\Debug\net8.0\Conta.Infrastructure.AssemblyInfo.cs
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\obj\Debug\net8.0\Conta.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\obj\Debug\net8.0\Conta.In.853B04AE.Up2Date
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\obj\Debug\net8.0\Conta.Infrastructure.dll
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\obj\Debug\net8.0\refint\Conta.Infrastructure.dll
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\obj\Debug\net8.0\Conta.Infrastructure.pdb
+C:\Desenvolvimento\BankMore\ContaService\Conta.Infrastructure\obj\Debug\net8.0\ref\Conta.Infrastructure.dll

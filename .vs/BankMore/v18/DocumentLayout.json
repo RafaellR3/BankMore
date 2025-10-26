@@ -1,0 +1,129 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Desenvolvimento\\BankMore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F0779630-6F74-8AEE-4713-D4F9391FD6B2}|ContaService\\Conta.API\\Conta.Api.csproj|c:\\desenvolvimento\\bankmore\\contaservice\\conta.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F0779630-6F74-8AEE-4713-D4F9391FD6B2}|ContaService\\Conta.API\\Conta.Api.csproj|solutionrelative:contaservice\\conta.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0779630-6F74-8AEE-4713-D4F9391FD6B2}|ContaService\\Conta.API\\Conta.Api.csproj|c:\\desenvolvimento\\bankmore\\contaservice\\conta.api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0779630-6F74-8AEE-4713-D4F9391FD6B2}|ContaService\\Conta.API\\Conta.Api.csproj|solutionrelative:contaservice\\conta.api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5C88567-1F2A-45BD-B3E4-838075B8E7D5}|ContaService\\Conta.Domain\\Conta.Domain.csproj|c:\\desenvolvimento\\bankmore\\contaservice\\conta.domain\\contas\\contacorrente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5C88567-1F2A-45BD-B3E4-838075B8E7D5}|ContaService\\Conta.Domain\\Conta.Domain.csproj|solutionrelative:contaservice\\conta.domain\\contas\\contacorrente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F3AC373-EDB7-4157-A5D6-976952953584}|ContaService\\Conta.Infrastructure\\Conta.Infrastructure.csproj|c:\\desenvolvimento\\bankmore\\contaservice\\conta.infrastructure\\repconta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F3AC373-EDB7-4157-A5D6-976952953584}|ContaService\\Conta.Infrastructure\\Conta.Infrastructure.csproj|solutionrelative:contaservice\\conta.infrastructure\\repconta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A6EC21D-1282-4F02-B414-5D7AEF344F36}|mysql-init{6A6EC21D-1282-4F02-B414-5D7AEF344F36}|C:\\Desenvolvimento\\BankMore\\mysql-init\\init.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{6A6EC21D-1282-4F02-B414-5D7AEF344F36}|mysql-init{6A6EC21D-1282-4F02-B414-5D7AEF344F36}|solutionrelative:mysql-init\\init.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0779630-6F74-8AEE-4713-D4F9391FD6B2}|ContaService\\Conta.API\\Conta.Api.csproj|c:\\desenvolvimento\\bankmore\\contaservice\\conta.api\\controllers\\contacorrentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0779630-6F74-8AEE-4713-D4F9391FD6B2}|ContaService\\Conta.API\\Conta.Api.csproj|solutionrelative:contaservice\\conta.api\\controllers\\contacorrentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A6EC21D-1282-4F02-B414-5D7AEF344F36}|mysql-init{6A6EC21D-1282-4F02-B414-5D7AEF344F36}|C:\\Desenvolvimento\\BankMore\\mysql-init\\init.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{6A6EC21D-1282-4F02-B414-5D7AEF344F36}|mysql-init{6A6EC21D-1282-4F02-B414-5D7AEF344F36}|solutionrelative:mysql-init\\init.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.API\\appsettings.json",
+              "RelativeDocumentMoniker": "ContaService\\Conta.API\\appsettings.json",
+              "ToolTip": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.API\\appsettings.json",
+              "RelativeToolTip": "ContaService\\Conta.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-26T16:34:57.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "init.sql ",
+              "DocumentMoniker": "C:\\Desenvolvimento\\BankMore\\mysql-init\\init.sql",
+              "RelativeDocumentMoniker": "mysql-init\\init.sql",
+              "ToolTip": "C:\\Desenvolvimento\\BankMore\\mysql-init\\init.sql",
+              "RelativeToolTip": "mysql-init\\init.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-10-26T16:26:28.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ContaCorrente.cs",
+              "DocumentMoniker": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.Domain\\Contas\\ContaCorrente.cs",
+              "RelativeDocumentMoniker": "ContaService\\Conta.Domain\\Contas\\ContaCorrente.cs",
+              "ToolTip": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.Domain\\Contas\\ContaCorrente.cs",
+              "RelativeToolTip": "ContaService\\Conta.Domain\\Contas\\ContaCorrente.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAuwCUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T16:26:18.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RepConta.cs",
+              "DocumentMoniker": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.Infrastructure\\RepConta.cs",
+              "RelativeDocumentMoniker": "ContaService\\Conta.Infrastructure\\RepConta.cs",
+              "ToolTip": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.Infrastructure\\RepConta.cs",
+              "RelativeToolTip": "ContaService\\Conta.Infrastructure\\RepConta.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAEwCAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T16:21:14.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ContaCorrenteController.cs",
+              "DocumentMoniker": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.API\\Controllers\\ContaCorrenteController.cs",
+              "RelativeDocumentMoniker": "ContaService\\Conta.API\\Controllers\\ContaCorrenteController.cs",
+              "ToolTip": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.API\\Controllers\\ContaCorrenteController.cs",
+              "RelativeToolTip": "ContaService\\Conta.API\\Controllers\\ContaCorrenteController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwB8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T16:13:58.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.API\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "ContaService\\Conta.API\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.API\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "ContaService\\Conta.API\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T16:05:06.063Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

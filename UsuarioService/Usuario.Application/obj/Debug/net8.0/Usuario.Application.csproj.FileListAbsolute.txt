@@ -1,0 +1,17 @@
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\bin\Debug\net8.0\Usuario.Application.deps.json
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\bin\Debug\net8.0\Usuario.Application.dll
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\bin\Debug\net8.0\Usuario.Application.pdb
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\bin\Debug\net8.0\Usuario.Domain.dll
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\bin\Debug\net8.0\Usuario.Infrastructure.dll
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\bin\Debug\net8.0\Usuario.Domain.pdb
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\bin\Debug\net8.0\Usuario.Infrastructure.pdb
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\obj\Debug\net8.0\Usuario.Application.csproj.AssemblyReference.cache
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\obj\Debug\net8.0\Usuario.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\obj\Debug\net8.0\Usuario.Application.AssemblyInfoInputs.cache
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\obj\Debug\net8.0\Usuario.Application.AssemblyInfo.cs
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\obj\Debug\net8.0\Usuario.Application.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\obj\Debug\net8.0\Usuario..017E4B3D.Up2Date
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\obj\Debug\net8.0\Usuario.Application.dll
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\obj\Debug\net8.0\refint\Usuario.Application.dll
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\obj\Debug\net8.0\Usuario.Application.pdb
+C:\Desenvolvimento\BankMore\UsuarioService\Usuario.Application\obj\Debug\net8.0\ref\Usuario.Application.dll

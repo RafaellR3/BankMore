@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "fEpLS3W/5Fg=",
+  "success": true,
+  "projectFilePath": "C:\\Desenvolvimento\\BankMore\\ContaService\\Conta.Domain\\Conta.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\local 1\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\local 1\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.21\\microsoft.windowsdesktop.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\local 1\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.21\\microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "C:\\Users\\local 1\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.21\\microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}

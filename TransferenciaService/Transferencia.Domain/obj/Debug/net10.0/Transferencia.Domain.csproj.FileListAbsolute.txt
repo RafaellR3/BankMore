@@ -1,0 +1,11 @@
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\bin\Debug\net10.0\Transferencia.Domain.deps.json
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\bin\Debug\net10.0\Transferencia.Domain.dll
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\bin\Debug\net10.0\Transferencia.Domain.pdb
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\obj\Debug\net10.0\Transferencia.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\obj\Debug\net10.0\Transferencia.Domain.AssemblyInfoInputs.cache
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\obj\Debug\net10.0\Transferencia.Domain.AssemblyInfo.cs
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\obj\Debug\net10.0\Transferencia.Domain.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\obj\Debug\net10.0\Transferencia.Domain.dll
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\obj\Debug\net10.0\refint\Transferencia.Domain.dll
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\obj\Debug\net10.0\Transferencia.Domain.pdb
+C:\Desenvolvimento\BankMore\TransferenciaService\Transferencia.Domain\obj\Debug\net10.0\ref\Transferencia.Domain.dll

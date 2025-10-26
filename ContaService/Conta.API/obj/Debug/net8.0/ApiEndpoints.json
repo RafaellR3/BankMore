@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "Conta.Api.Controllers.ContaCorrenteController",
+    "Method": "Criar",
+    "RelativePath": "api/ContaCorrente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "conta",
+        "Type": "Conta.Domain.Dto.ContaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Conta.Api.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Conta.Domain.Dto.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
