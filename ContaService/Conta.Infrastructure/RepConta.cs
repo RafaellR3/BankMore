@@ -21,11 +21,11 @@ namespace Conta.Infrastructure
             {
                 case EnumTipoLogin.Cpf :
 
-                    sql = "SELECT Id, Cpf, Senha, Salt FROM ContaCorrente WHERE Cpf = @cpf";
+                    sql = "SELECT Id, Cpf, Senha, Salt, Numero FROM ContaCorrente WHERE Cpf = @cpf";
                     return await connection.QueryFirstOrDefaultAsync<ContaCorrente>(sql, new { Cpf = dto.Login });
                 case EnumTipoLogin.NumeroConta :
 
-                    sql = "SELECT Id, Cpf, Senha, Salt FROM ContaCorrente WHERE numero = @numero";
+                    sql = "SELECT Id, Cpf, Senha, Salt, Numero FROM ContaCorrente WHERE numero = @numero";
                     return await connection.QueryFirstOrDefaultAsync<ContaCorrente>(sql, new { Numero = dto.Login });
                 default:
                     throw new Exception("Login inválido.");
@@ -45,6 +45,20 @@ namespace Conta.Infrastructure
         {
             using var connection = _context.CreateConnection();
             var sql = "INSERT INTO ContaCorrente (Id, Numero, Cpf, Senha, Salt, Ativo) VALUES (@Id, @Numero, @Cpf, @Senha, @Salt, @Ativo)";
+            await connection.ExecuteAsync(sql, conta);
+        }
+
+        public async Task<ContaCorrente?> ObterPorNumeroAsync(int numero)
+        {
+            using var connection = _context.CreateConnection();
+            var sql = "SELECT Id, Numero, Cpf, Senha, Salt, Ativo FROM ContaCorrente WHERE Numero = @Numero";
+            return await connection.QueryFirstOrDefaultAsync<ContaCorrente>(sql, new { Numero = numero });
+        }
+
+        public async Task AtualizarAsync(ContaCorrente conta)
+        {
+            using var connection = _context.CreateConnection();
+            var sql = "UPDATE ContaCorrente SET Ativo = @Ativo WHERE Id = @Id";
             await connection.ExecuteAsync(sql, conta);
         }
     }

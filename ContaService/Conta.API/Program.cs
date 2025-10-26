@@ -1,5 +1,9 @@
-using Conta.Application;
+using Conta.Application.Contas;
+using Conta.Application.Movimentos;
 using Conta.Domain.Contas;
+using Conta.Domain.Idempotencias;
+using Conta.Domain.Movimentos;
+using Conta.Domain.Movimentos.Validador;
 using Conta.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -30,7 +34,22 @@ namespace Conta.Api
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = jwtSettings["Issuer"],
                     ValidAudience = jwtSettings["Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]))
+                };
+
+                options.Events = new JwtBearerEvents
+                {
+                    OnAuthenticationFailed = context =>
+                    {
+                        if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+                        {
+                            context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                            context.Response.ContentType = "application/json";
+                            return context.Response.WriteAsync("{\"error\": \"Token inválido\"}");
+                        }
+
+                        return Task.CompletedTask;
+                    }
                 };
             });
 
@@ -38,9 +57,12 @@ namespace Conta.Api
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddSingleton(new DapperContext(connectionString));
-            builder.Services.AddScoped<IRepConta, RepConta>();
             builder.Services.AddScoped<IAplicConta, AplicConta>();
-
+            builder.Services.AddScoped<IAplicMovimento, AplicMovimento>();
+            builder.Services.AddScoped<IRepConta, RepConta>();
+            builder.Services.AddScoped<IRepIdempotencia, RepIdempotencia>(); 
+            builder.Services.AddScoped<IRepMovimento, RepMovimento>();
+            builder.Services.AddScoped<IValidadorMovimento, ValidadorMovimento>();
 
             if (IsRunningInDocker())
             {
@@ -52,7 +74,38 @@ namespace Conta.Api
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new() { Title = "Conta API", Version = "v1" });
+
+                // Configuração para JWT
+                c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+                    Description = "Insira o token JWT assim: Bearer {seu token}"
+                });
+
+                c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+                {
+                    {
+                        new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+                        {
+                            Reference = new Microsoft.OpenApi.Models.OpenApiReference
+                            {
+                                Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
+            });
+
+
 
             builder.Services.AddCors(options =>
             {

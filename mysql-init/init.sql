@@ -16,19 +16,18 @@ CREATE TABLE IF NOT EXISTS ContaCorrente (
 	Salt VARCHAR(100) NOT NULL,
 	CHECK (Ativo in (0,1))
 );
-/*
-CREATE TABLE movimento (
-	idmovimento CHAR(36) PRIMARY KEY, -- identificacao unica do movimento
-	idcontacorrente TEXT(37) NOT NULL, -- identificacao unica da conta corrente
-	datamovimento TEXT(25) NOT NULL, -- data do movimento no formato DD/MM/YYYY
-	tipomovimento TEXT(1) NOT NULL, -- tipo do movimento. (C = Credito, D = Debito).
-	valor REAL NOT NULL, -- valor do movimento. Usar duas casas decimais.
-	CHECK (tipomovimento in ('C','D')),
-	FOREIGN KEY(idcontacorrente) REFERENCES contacorrente(idcontacorrente)
+
+CREATE TABLE  IF NOT EXISTS movimento (
+	Id CHAR(36) PRIMARY KEY, -- identificacao unica do movimento
+	IdContaCorrente CHAR(36) NOT NULL, -- identificacao unica da conta corrente
+	DataMovimentacao DATE NOT NULL, -- data do movimento no formato DD/MM/YYYY
+	TipoMovimento CHAR(1) NOT NULL, -- tipo do movimento. (C = Credito, D = Debito).
+	Valor decimal NOT NULL, -- valor do movimento. Usar duas casas decimais.
+	FOREIGN KEY(IdContaCorrente) REFERENCES ContaCorrente(Id)
 );
 
-CREATE TABLE idempotencia (
-	chave_idempotencia CHAR(36) PRIMARY KEY, -- identificacao chave de idempotencia
-	requisicao TEXT(1000), -- dados de requisicao
-	resultado TEXT(1000) -- dados de retorno
-);\*
+CREATE TABLE IF NOT EXISTS idempotencia (
+	chave_idempotencia VARCHAR(36) PRIMARY KEY, -- identificacao chave de idempotencia
+	requisicao VARCHAR(1000), -- dados de requisicao
+	resultado VARCHAR(1000) -- dados de retorno
+);

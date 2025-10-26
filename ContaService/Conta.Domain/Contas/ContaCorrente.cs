@@ -20,6 +20,11 @@ namespace Conta.Domain.Contas
             GerarSenha(senha);
 
         }
+        public void Inativar()
+        {
+            Ativo = false;
+        }
+
         public void GerarSenha(string senha)
         {
 

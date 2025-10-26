@@ -1,7 +1,7 @@
 ﻿using Conta.Domain.Contas;
 using Conta.Domain.Dto;
 
-namespace Conta.Application
+namespace Conta.Application.Contas
 {
     public class AplicConta: IAplicConta
     {
@@ -20,5 +20,13 @@ namespace Conta.Application
 
             return conta.Numero;
         }
+
+        public async Task Inativar(ContaCorrente conta)
+        {
+            conta.Inativar();   
+            await _repConta.AtualizarAsync(conta);
+        }
+
+
     }
 }
