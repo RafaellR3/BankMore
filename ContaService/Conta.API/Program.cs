@@ -1,5 +1,4 @@
-using Conta.Application.Contas;
-using Conta.Application.Movimentos;
+using Conta.Application.Contas.Queries;
 using Conta.Domain.Contas;
 using Conta.Domain.Idempotencias;
 using Conta.Domain.Movimentos;
@@ -56,13 +55,12 @@ namespace Conta.Api
             builder.Services.AddAuthorization();
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-            builder.Services.AddSingleton(new DapperContext(connectionString));
-            builder.Services.AddScoped<IAplicConta, AplicConta>();
-            builder.Services.AddScoped<IAplicMovimento, AplicMovimento>();
+            builder.Services.AddSingleton(new DapperContext(connectionString)); 
             builder.Services.AddScoped<IRepConta, RepConta>();
             builder.Services.AddScoped<IRepIdempotencia, RepIdempotencia>(); 
             builder.Services.AddScoped<IRepMovimento, RepMovimento>();
             builder.Services.AddScoped<IValidadorMovimento, ValidadorMovimento>();
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CriarContaCommand).Assembly));
 
             if (IsRunningInDocker())
             {
@@ -78,7 +76,7 @@ namespace Conta.Api
             {
                 c.SwaggerDoc("v1", new() { Title = "Conta API", Version = "v1" });
 
-                // Configuração para JWT
+     
                 c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
                 {
                     Name = "Authorization",

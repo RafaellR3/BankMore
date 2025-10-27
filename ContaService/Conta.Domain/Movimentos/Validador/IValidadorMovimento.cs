@@ -1,5 +1,5 @@
-﻿using Conta.Domain.Contas;
-using Conta.Infrastructure.Resultados;
+﻿using Conta.Domain.Commom;
+using Conta.Domain.Contas;
 
 namespace Conta.Domain.Movimentos.Validador
 {

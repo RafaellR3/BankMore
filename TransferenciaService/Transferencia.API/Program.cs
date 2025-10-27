@@ -1,9 +1,9 @@
 
-using Conta.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Transferencia.Application.Transferencias;
+using Transferencia.Infrastructure;
 
 namespace Transferecia.Api
 {

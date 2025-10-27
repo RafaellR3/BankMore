@@ -1,4 +1,4 @@
-﻿namespace Conta.Infrastructure.Resultados
+﻿namespace Conta.Domain.Commom
 {
     public class Resultado
     {

@@ -1,9 +1,10 @@
-﻿using Conta.Application.Contas;
-using Conta.Domain.Contas;
+﻿using Conta.Application.Contas.Queries;
 using Conta.Domain.Contas.Dto;
 using Conta.Domain.Dto;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Conta.Api.Controllers
 {
@@ -11,80 +12,45 @@ namespace Conta.Api.Controllers
     [Route("api/[controller]")]
     public class ContaCorrenteController : ControllerBase
     {
-        private readonly IAplicConta _aplic;
-        private readonly IRepConta _repConta;
+        private readonly IMediator _mediator;
 
-        public ContaCorrenteController(IAplicConta aplic, 
-                                       IRepConta repConta)
+        public ContaCorrenteController(IMediator mediator)
         {
-            _aplic = aplic;
-            _repConta = repConta;
+            _mediator = mediator;
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> Criar([FromBody] ContaDto conta)
+        public async Task<IActionResult> Criar([FromBody] ContaDto dto)
         {
-            if (!ValidadorCfp.Validar(conta.Cpf))
-            {
-                return BadRequest(new
-                {
-                    type = "INVALID_DOCUMENT",
-                    message = "O CPF informado é inválido."
-                });
-            }
-
-            var ret = await _aplic.Criar(conta);
-            return Ok(ret);
+            var numeroConta = await _mediator.Send(new CriarContaCommand(dto));
+            return Ok(new { NumeroConta = numeroConta });
         }
 
         [Authorize]
-        [HttpPut("Inativar")]
-        public async Task<IActionResult> Inativar([FromBody] InativarDto dto)
+        [HttpPost("{numeroConta}/inativar")]
+        public async Task<IActionResult> Inativar( [FromBody] InativarDto dto)
         {
-            var conta = await _repConta.ObterPorNumeroAsync(dto.Numero);
-            if (conta == null)
-            {
-                return NotFound(new
-                {
-                    type = "INVALID_ACCOUNT",
-                    message = "Conta não encontrada."
-                });
-            }
 
-            if (!conta.VerificarSenha(dto.Senha))
-            {
-                return BadRequest(new
-                {
-                    type = "INVALID_PASSWORD",
-                    message = "Senha inválida."
-                });
-            }
+            var resultado = await _mediator.Send(new InativarContaCommand(dto.Numero, dto.Senha));
 
-            _aplic.Inativar(conta);
+            if (!resultado.Sucesso)
+                return BadRequest(new { type = resultado.TipoErro, message = resultado.Mensagem });
 
             return NoContent();
         }
 
+
         [Authorize]
         [HttpGet("{numeroConta}/saldo")]
-        public async Task<IActionResult> ConsultarSaldo([FromRoute] int numeroConta)
-
+        public async Task<IActionResult> ConsultarSaldo(int numeroConta)
         {
-            var resultado = await _aplic.ConsultarSaldoAsync(numeroConta);
+            var resultado = await _mediator.Send(new ConsultarSaldoQuery(numeroConta));
 
             if (!resultado.Sucesso)
-            {
-                if (resultado.TipoErro == "INVALID_ACCOUNT" || resultado.TipoErro == "INACTIVE_ACCOUNT")
-                    return BadRequest(new { erro = resultado.TipoErro, mensagem = resultado.Mensagem });
-
-                if (resultado.TipoErro == "TOKEN_INVALID")
-                    return Forbid(); 
-            }
+                return BadRequest(new { type = resultado.TipoErro, message = resultado.Mensagem });
 
             return Ok(resultado.Dados);
         }
-
     }
 }
 

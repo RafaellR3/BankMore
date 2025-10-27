@@ -1,4 +1,4 @@
-﻿using Conta.Infrastructure.Resultados;
+﻿using Transferencia.Infrastructure.Resultados;
 
 namespace Transferencia.Application.Transferencias
 {

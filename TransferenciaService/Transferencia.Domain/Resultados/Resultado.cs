@@ -1,4 +1,4 @@
-﻿namespace Conta.Infrastructure.Resultados
+﻿namespace Transferencia.Infrastructure.Resultados
 {
     public class Resultado
     {

@@ -16,21 +16,7 @@ services:
       - ./mysql-init:/docker-entrypoint-initdb.d
     networks:
       - bankmore-net
-
-  usuario-service:
-    build:
-      context: ./UsuarioService
-      dockerfile: Usuario.Api/Dockerfile
-    container_name: usuario-service
-    depends_on:
-      - mysql
-    environment:
-      - ConnectionStrings__DefaultConnection=server=mysql;port=3306;database=bankmoredb;user=bankmoreuser;password=bankmorepass
-    ports:
-      - "5001:8080"
-    networks:
-      - bankmore-net
-
+        
   conta-service:
     build:
       context: ./ContaService
