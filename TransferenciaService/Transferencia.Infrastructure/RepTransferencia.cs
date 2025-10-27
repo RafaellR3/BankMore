@@ -19,14 +19,14 @@ namespace Conta.Infrastructure.Transferencias
         {
             using var conn = _context.CreateConnection();
             var sql = @"INSERT INTO transferencia 
-                        (Id, NumeroContaOrigem, NumeroContaDestino, Valor, DataMovimentacao) 
-                        VALUES (@Id, @Origem, @Destino, @Valor, @Data)";
+                        (Id, IdContaCorrenteOrigem, IdContaCorrenteDestino, Valor, DataMovimentacao) 
+                        VALUES (@Id, @IdContaCorenteOrigem, @IdContaCorrenteDestino, @Valor, @Data)";
 
             await conn.ExecuteAsync(sql, new
             {
                 Id = transferencia.Id,
-                Origem = transferencia.NumeroContaOrigem,
-                Destino = transferencia.NumeroContaDestino,
+                Origem = transferencia.IdContaCorenteOrigem,
+                Destino = transferencia.IdContaCorrenteDestino,
                 Valor = transferencia.Valor,
                 DataMovimentacao = transferencia.Data
             });

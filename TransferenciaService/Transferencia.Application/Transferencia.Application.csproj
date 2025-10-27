@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Transferencia.Domain\Transferencia.Domain.csproj" />
+    <ProjectReference Include="..\Transferencia.Infrastructure\Transferencia.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

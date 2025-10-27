@@ -2,7 +2,7 @@
 using Conta.Domain.Contas;
 using MediatR;
 
-namespace Conta.Application.Contas.Queries
+namespace Conta.Application.Contas.Queries.Handlers
 {
     public class ConsultarSaldoHandler : IRequestHandler<ConsultarSaldoQuery, Resultado>
     {

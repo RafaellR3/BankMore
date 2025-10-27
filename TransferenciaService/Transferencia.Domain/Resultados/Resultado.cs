@@ -1,4 +1,4 @@
-﻿namespace Transferencia.Infrastructure.Resultados
+﻿namespace Transferencia.Domain.Resultados
 {
     public class Resultado
     {

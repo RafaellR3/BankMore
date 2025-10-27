@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Transferencia.Application.Transferencias;
+using Transferencia.Application.Transferencias.Commands;
 using Transferencia.Infrastructure;
+using Transferencia.Infrastructure.Integracao;
 
 namespace Transferecia.Api
 {
@@ -53,7 +55,11 @@ namespace Transferecia.Api
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddSingleton(new DapperContext(connectionString));
-            builder.Services.AddScoped<IAplicTransferencia, AplicTransferencia>();
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CriarTransferenciaCommand).Assembly));
+            builder.Services.AddHttpClient<IContaClient, ContaClient>(client =>
+            {
+                client.BaseAddress = new Uri(builder.Configuration["Services:ContaApi"]!);
+            });
 
             if (IsRunningInDocker())
             {
@@ -69,7 +75,7 @@ namespace Transferecia.Api
             {
                 c.SwaggerDoc("v1", new() { Title = "Conta API", Version = "v1" });
 
-                // Configuração para JWT
+                
                 c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
                 {
                     Name = "Authorization",

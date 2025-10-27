@@ -27,7 +27,7 @@ namespace Conta.Api.Controllers
         }
 
         [Authorize]
-        [HttpPost("{numeroConta}/inativar")]
+        [HttpPost("inativar")]
         public async Task<IActionResult> Inativar( [FromBody] InativarDto dto)
         {
 
@@ -51,6 +51,19 @@ namespace Conta.Api.Controllers
 
             return Ok(resultado.Dados);
         }
+
+        [Authorize]
+        [HttpGet("{numeroConta}")]
+        public async Task<IActionResult> ObterConta(int numeroConta)
+        {
+            var resultado = await _mediator.Send(new ObterContaQuery(numeroConta));
+
+            if (!resultado.Sucesso)
+                return NotFound(new { type = resultado.TipoErro, message = resultado.Mensagem });
+
+            return Ok(resultado.Dados);
+        }
+
     }
 }
 

@@ -1,9 +1,10 @@
-﻿using Conta.Domain.Commom;
+﻿using Conta.Application.Contas.Queries;
+using Conta.Domain.Commom;
 using Conta.Domain.Contas;
 using MediatR;
 
 
-namespace Conta.Application.Contas.Queries
+namespace Conta.Application.Contas.Commands.Handlers
 {
 
     public class CriarContaHandler : IRequestHandler<CriarContaCommand, Resultado>

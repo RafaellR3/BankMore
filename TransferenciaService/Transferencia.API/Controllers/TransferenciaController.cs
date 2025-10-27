@@ -1,48 +1,45 @@
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Transferencia.Application.Transferencias;
+using Transferencia.Application.Transferencias.Commands;
 
 [ApiController]
 [Route("api/[controller]")]
 public class TransferenciaController : ControllerBase
 {
-    private readonly IAplicTransferencia _aplic;
+    private readonly IMediator _mediator;
 
-    public TransferenciaController(IAplicTransferencia aplic)
+    public TransferenciaController(IMediator mediator)
     {
-        _aplic = aplic;
+        _mediator = mediator;
     }
 
-    [HttpPost]
     [Authorize]
-    public async Task<IActionResult> Efetuar([FromBody] TransferenciaDto dto)
+    [HttpPost]
+    public async Task<IActionResult> Criar(
+    [FromBody] TransferenciaDto dto,
+    [FromHeader(Name = "Idempotency-Key")] string idempotencyKey)
     {
-        try
-        {
-            var token = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
-            var ret = await _aplic.EfetuarAsync(dto.ContaOrigem, dto.ContaDestino, dto.Valor, token);
-            if (!ret.Sucesso)
-                return BadRequest(new
-                {
-                    type = ret.TipoErro,
-                    message = ret.Mensagem
-                });
-            return NoContent(); 
-        }
-        catch (UnauthorizedAccessException)
-        {
-            return Forbid(); 
-        }
-        catch (InvalidOperationException ex)
-        {
-            return BadRequest(new { erro = ex.Message });
-        }
+        var command = new CriarTransferenciaCommand(
+            dto.ContaOrigem,
+            dto.ContaDestino,
+            dto.Valor,
+            idempotencyKey
+        );
+
+        var resultado = await _mediator.Send(command);
+
+        if (!resultado.Sucesso)
+            return BadRequest(new { type = resultado.TipoErro, message = resultado.Mensagem });
+
+        return Ok(resultado.Dados);
     }
+
 }
 
 public class TransferenciaDto
 {
-    public string ContaOrigem { get; set; }
-    public string ContaDestino { get; set; }
+    public int ContaOrigem { get; set; }
+    public int ContaDestino { get; set; }
     public decimal Valor { get; set; }
 }
