@@ -15,7 +15,7 @@ namespace Conta.Application.Contas.Queries.Handlers
 
         public async Task<Resultado> Handle(ConsultarSaldoQuery request, CancellationToken cancellationToken)
         {
-            var conta = await _repConta.ObterPorNumeroAsync(request.NumeroConta);
+            var conta = await _repConta.ObterPorIdAsync(request.idConta);
 
             if (conta == null)
                 return Resultado.Falha("INVALID_ACCOUNT", "Conta não encontrada.");

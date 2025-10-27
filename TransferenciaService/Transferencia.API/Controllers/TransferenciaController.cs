@@ -39,7 +39,7 @@ public class TransferenciaController : ControllerBase
 
 public class TransferenciaDto
 {
-    public int ContaOrigem { get; set; }
-    public int ContaDestino { get; set; }
+    public Guid ContaOrigem { get; set; }
+    public Guid ContaDestino { get; set; }
     public decimal Valor { get; set; }
 }

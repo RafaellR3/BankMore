@@ -3,6 +3,6 @@
     public class DadosAmbiente
     {
         public string CpfUsuarioLogado { get; set; }
-        public int NumeroContaUsuarioLogado { get; set; }
+        public Guid IdContaUsuarioLogado { get; set; }
     }
 }

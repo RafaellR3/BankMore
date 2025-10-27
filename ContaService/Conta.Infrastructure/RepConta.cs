@@ -55,6 +55,13 @@ namespace Conta.Infrastructure
             return await connection.QueryFirstOrDefaultAsync<ContaCorrente>(sql, new { Numero = numero });
         }
 
+        public async Task<ContaCorrente?> ObterPorIdAsync(Guid id)
+        {
+            using var connection = _context.CreateConnection();
+            var sql = "SELECT Id, Numero, Cpf, Senha, Salt, Ativo FROM ContaCorrente WHERE Id = @Id";
+            return await connection.QueryFirstOrDefaultAsync<ContaCorrente>(sql, new { Id = id });
+        }
+
         public async Task AtualizarAsync(ContaCorrente conta)
         {
             using var connection = _context.CreateConnection();

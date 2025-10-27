@@ -1,9 +1,9 @@
-
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Transferencia.Application.Transferencias;
 using Transferencia.Application.Transferencias.Commands;
+using Transferencia.Domain.Idempotencias;
+using Transferencia.Domain.Transferencias;
 using Transferencia.Infrastructure;
 using Transferencia.Infrastructure.Integracao;
 
@@ -54,11 +54,14 @@ namespace Transferecia.Api
             builder.Services.AddAuthorization();
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+            builder.Services.AddHttpContextAccessor();
             builder.Services.AddSingleton(new DapperContext(connectionString));
+            builder.Services.AddScoped<IRepIdempotencia, RepIdempotencia>();
+            builder.Services.AddScoped<IRepTransferencia, RepTransferencia>();
             builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(CriarTransferenciaCommand).Assembly));
             builder.Services.AddHttpClient<IContaClient, ContaClient>(client =>
             {
-                client.BaseAddress = new Uri(builder.Configuration["Services:ContaApi"]!);
+                client.BaseAddress = new Uri(builder.Configuration["Services:ContaService"]!);
             });
 
             if (IsRunningInDocker())
@@ -73,7 +76,7 @@ namespace Transferecia.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new() { Title = "Conta API", Version = "v1" });
+                c.SwaggerDoc("v1", new() { Title = "Transferêcia API", Version = "v1" });
 
                 
                 c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme

@@ -6,7 +6,6 @@ using Conta.Domain.Movimentos.Validador;
 using MediatR;
 using System.Text.Json;
 
-
 namespace Conta.Application.Movimentos.Commands.Handlers
 {
     public class CriarMovimentoHandler : IRequestHandler<CriarMovimentoCommand, Resultado>
@@ -32,14 +31,11 @@ namespace Conta.Application.Movimentos.Commands.Handlers
 
             var existente = await _repIdempotencia.ObterAsync(request.IdempotencyKey);
             if (existente != null)
-                return Resultado.Ok(JsonSerializer.Deserialize<object>(existente.Resultado));
+                return Resultado.Ok(JsonSerializer.Deserialize<object>(existente.Resultado));           
 
-           
-
-            var conta = await _repConta.ObterPorNumeroAsync(request.Dto.NumeroConta.Value);
+            var conta = await _repConta.ObterPorIdAsync(request.Dto.IdConta.Value);
             if (conta == null)
                 return Resultado.Falha("INVALID_ACCOUNT", "Conta não encontrada.");
-
 
             var movimento = new Movimento
             {
@@ -53,9 +49,7 @@ namespace Conta.Application.Movimentos.Commands.Handlers
             if (!validacao.Sucesso)
                 return validacao;
 
-
             await _repMovimento.AdicionarAsync(movimento);
-
 
             var resultadoJson = JsonSerializer.Serialize(new
             {

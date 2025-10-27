@@ -5,8 +5,8 @@ namespace Transferencia.Application.Transferencias.Commands
 {
   
     public record CriarTransferenciaCommand(
-        int ContaOrigem,
-        int ContaDestino,
+        Guid ContaOrigem,
+        Guid ContaDestino,
         decimal Valor,
         string IdempotencyKey
     ) : IRequest<Resultado>;

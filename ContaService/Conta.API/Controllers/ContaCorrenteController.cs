@@ -41,10 +41,10 @@ namespace Conta.Api.Controllers
 
 
         [Authorize]
-        [HttpGet("{numeroConta}/saldo")]
-        public async Task<IActionResult> ConsultarSaldo(int numeroConta)
+        [HttpGet("{idConta}/saldo")]
+        public async Task<IActionResult> ConsultarSaldo(Guid idConta)
         {
-            var resultado = await _mediator.Send(new ConsultarSaldoQuery(numeroConta));
+            var resultado = await _mediator.Send(new ConsultarSaldoQuery(idConta));
 
             if (!resultado.Sucesso)
                 return BadRequest(new { type = resultado.TipoErro, message = resultado.Mensagem });
@@ -53,10 +53,10 @@ namespace Conta.Api.Controllers
         }
 
         [Authorize]
-        [HttpGet("{numeroConta}")]
-        public async Task<IActionResult> ObterConta(int numeroConta)
+        [HttpGet("{idConta}")]
+        public async Task<IActionResult> ObterConta(Guid idConta)
         {
-            var resultado = await _mediator.Send(new ObterContaQuery(numeroConta));
+            var resultado = await _mediator.Send(new ObterContaQuery(idConta));
 
             if (!resultado.Sucesso)
                 return NotFound(new { type = resultado.TipoErro, message = resultado.Mensagem });

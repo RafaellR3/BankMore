@@ -5,6 +5,6 @@ using MediatR;
 namespace Conta.Application.Contas.Queries
 {
 
-    public record ConsultarSaldoQuery(int NumeroConta) : IRequest<Resultado>;
+    public record ConsultarSaldoQuery(Guid idConta) : IRequest<Resultado>;
 
 }

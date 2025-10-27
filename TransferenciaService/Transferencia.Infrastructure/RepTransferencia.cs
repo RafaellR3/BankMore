@@ -1,9 +1,7 @@
 ﻿using Dapper;
-using System.Data;
 using Transferencia.Domain.Transferencias;
-using Transferencia.Infrastructure;
 
-namespace Conta.Infrastructure.Transferencias
+namespace Transferencia.Infrastructure
 {
 
     public class RepTransferencia : IRepTransferencia
@@ -20,15 +18,15 @@ namespace Conta.Infrastructure.Transferencias
             using var conn = _context.CreateConnection();
             var sql = @"INSERT INTO transferencia 
                         (Id, IdContaCorrenteOrigem, IdContaCorrenteDestino, Valor, DataMovimentacao) 
-                        VALUES (@Id, @IdContaCorenteOrigem, @IdContaCorrenteDestino, @Valor, @Data)";
+                        VALUES (@Id, @IdContaCorrenteOrigem, @IdContaCorrenteDestino, @Valor, @DataMovimentacao)";
 
             await conn.ExecuteAsync(sql, new
             {
-                Id = transferencia.Id,
-                Origem = transferencia.IdContaCorenteOrigem,
-                Destino = transferencia.IdContaCorrenteDestino,
-                Valor = transferencia.Valor,
-                DataMovimentacao = transferencia.Data
+                transferencia.Id,
+                transferencia.IdContaCorrenteOrigem,
+                transferencia.IdContaCorrenteDestino,
+                transferencia.Valor,
+                transferencia.DataMovimentacao
             });
         }
     }

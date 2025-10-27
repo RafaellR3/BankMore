@@ -30,5 +30,11 @@ namespace Conta.Infrastructure
             return await connection.QueryFirstOrDefaultAsync<Movimento>(sql, new { idContaCorrente });
         }
 
+        public async Task<Movimento?> ObeterPorIdAsync(Guid idMovto)
+        {
+            using var connection = _context.CreateConnection();
+            var sql = "SELECT * FROM movimento WHERE Id = @idMovto";
+            return await connection.QueryFirstOrDefaultAsync<Movimento>(sql, new { idMovto });
+        }
     }
 }
