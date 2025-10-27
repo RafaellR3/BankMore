@@ -223,3 +223,7 @@
 /TransferenciaService/Transferencia.Application/obj/Transferencia.Application.csproj.nuget.g.targets
 /TransferenciaService/Transferencia.Domain/obj/Transferencia.Domain.csproj.nuget.g.targets
 /TransferenciaService/Transferencia.Infrastructure/obj/Transferencia.Infrastructure.csproj.nuget.g.targets
+/.vs/BankMore/v18/.futdcache.v2
+/.vs/ProjectEvaluation/bankmore.metadata.v10.bin
+/.vs/ProjectEvaluation/bankmore.projects.v10.bin
+/.vs/ProjectEvaluation/bankmore.strings.v10.bin
