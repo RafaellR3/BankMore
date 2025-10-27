@@ -213,3 +213,13 @@
 /TransferenciaService/Transferencia.Infrastructure/obj/project.assets.json
 /TransferenciaService/Transferencia.Infrastructure/obj/project.nuget.cache
 /TransferenciaService/Transferencia.Infrastructure/obj/Transferencia.Infrastructure.csproj.nuget.dgspec.json
+/ContaService/Conta.Application/obj/Conta.Application.csproj.nuget.g.targets
+/ContaService/Conta.Infrastructure/bin/Debug/net8.0/Conta.Infrastructure.deps.json
+/ContaService/Conta.Infrastructure/obj/Debug/net8.0/Conta.Infrastructure.assets.cache
+/ContaService/Conta.Infrastructure/obj/Conta.Infrastructure.csproj.nuget.dgspec.json
+/ContaService/Conta.Infrastructure/obj/Conta.Infrastructure.csproj.nuget.g.targets
+/ContaService/Conta.Infrastructure/obj/project.assets.json
+/ContaService/Conta.Infrastructure/obj/project.nuget.cache
+/TransferenciaService/Transferencia.Application/obj/Transferencia.Application.csproj.nuget.g.targets
+/TransferenciaService/Transferencia.Domain/obj/Transferencia.Domain.csproj.nuget.g.targets
+/TransferenciaService/Transferencia.Infrastructure/obj/Transferencia.Infrastructure.csproj.nuget.g.targets
