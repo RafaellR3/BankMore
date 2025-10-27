@@ -41,7 +41,7 @@ services:
     depends_on:
       - mysql
     environment:
-      - ConnectionStrings__DefaultConnection=server=mysql;port=3306;database=bankmoredb;user=bankmoreuser;password=bankmorepassvvvvv
+      - ConnectionStrings__DefaultConnection=server=mysql;port=3306;database=bankmoredb;user=bankmoreuser;password=bankmorepass
     ports:
       - "5003:8080"
     networks:
